@@ -88,7 +88,7 @@ OSStartHighRdy:  #第一个任务运行 的切换 目的：获得堆栈让它弹栈 没有旧任务 需要保
 OSCtxSw:#任务切换 schedu() 用的 中断有关的地方有四个 系统刚开始 中断无关 中断相关（定时器以及外部中断） OSPrioHighRdy是ID //找到函数的定位 站在哪里 讲清楚铺垫
 #与schedu（）搭配完成 调度切换的任务 OS运行在管理模式 app运行在系统模式  
 # Special optimised code below:
-        stmfd sp!,{lr}              @ push pc (lr should be pushed in place of PC)lr是什么本模式的lr （任务跳转时会做）
+        stmfd sp!,{lr}              @ push pc (lr should be pushed in place of PC)lr是什么本模式的lr （任务跳转时会做）1、内容相同吗？（schedu的下一行）2、
         stmfd sp!,{r0-r12,lr}       @ push lr & register file
         mrs r4,cpsr
         stmfd sp!,{r4}              @ push current psr

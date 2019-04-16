@@ -45,7 +45,7 @@
 *                              free partition is available.
 *********************************************************************************************************
 */
-//要考
+//要考 背景在OSstart被创建 创建内存区域 四个字节用于实现链表 free永远指向有空的那一个 在物理地址上不连续在 单向链表中连续
 OS_MEM  *OSMemCreate (void *addr, INT32U nblks, INT32U blksize, INT8U *err)
 {
     OS_MEM    *pmem;
