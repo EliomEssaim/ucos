@@ -9,7 +9,7 @@
 *
 * File    : OS_Q.C
 * By      : Jean J. Labrosse
-* Version : V2.76 correction test for github;
+* Version : V2.76 correction test for github; ∑÷÷ß≤‚ ‘
 *********************************************************************************************************
 */
 
