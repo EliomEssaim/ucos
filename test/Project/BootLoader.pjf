@@ -1,0 +1,312 @@
+# Embest IDE Project File, Format Version 1.00
+# WARNING: DO NOT EDIT OR DELETE THIS PROJECT FILE!
+
+<BEGIN> PROJECT_NAME
+ucos_eb55
+<END>
+
+<BEGIN> CONFIG
+
+	<BEGIN> CPU
+	MODULE=arm7.DLL
+	FAMILY=ARM7
+	FAMILYID=1
+	MEMBER=ARM7
+	MEMBERID=1
+	ENDIAN=0
+	MAKER=ATMEL
+	CHIP=AT91M55800
+	<END>
+
+	<BEGIN> REMOTE
+	DEVICE=PowerIceArm7.DLL
+	COMMTYPE=PARALLEL
+	PARALLEL=LPT1
+	SPEED=0
+	<END>
+
+	<BEGIN> DEBUG
+	VERIFY=TRUE
+	AUTODOWNLOAD=FALSE
+	SYMBOL=.\debug\BootLoader.elf
+	DOWNLOAD=.\debug\BootLoader.elf
+	DOWNLOADADDR=0x02060000
+	MEMMAPFILE=
+	AUTOSCRIPT=TRUE
+	USEMEMMAP=FALSE
+	EXECFDOWN=TRUE
+	EXECFENTRY=FALSE
+	SCRIPT=..\BootAsm\boot_eb55.cs
+	LINK=.\debug\BootLoader.elf
+	<END>
+
+	<BEGIN> DIR
+	SOURCE=..\periph\;
+	SUBDIR=TRUE
+	<END>
+
+	<BEGIN> CPU
+	MODULE=arm7.DLL
+	FAMILY=ARM7
+	FAMILYID=1
+	MEMBER=ARM7
+	MEMBERID=1
+	ENDIAN=0
+	MAKER=ATMEL
+	CHIP=AT91M55800
+	<END>
+
+	<BEGIN> REMOTE
+	DEVICE=JtagArm7.DLL
+	COMMTYPE=PARALLEL
+	PARALLEL=LPT1
+	SPEED=0
+	<END>
+
+	<BEGIN> DEBUG
+	VERIFY=TRUE
+	AUTODOWNLOAD=FALSE
+	SYMBOL=.\debug\ucos_eb55.elf
+	DOWNLOAD=.\debug\ucos_eb55.elf
+	DOWNLOADADDR=0x02000000
+	MEMMAPFILE=
+	AUTOSCRIPT=TRUE
+	USEMEMMAP=FALSE
+	EXECFDOWN=TRUE
+	EXECFENTRY=FALSE
+	SCRIPT=.\at91\targets\boot_eb55.cs
+	LINK=.\debug\ucos_eb55.elf
+	<END>
+
+	<BEGIN> DIR
+	SOURCE=.\at91\;
+	SUBDIR=TRUE
+	<END>
+
+	<BEGIN> CPU
+	MODULE=arm7.DLL
+	FAMILY=ARM7
+	FAMILYID=1
+	MEMBER=ARM7
+	MEMBERID=1
+	ENDIAN=0
+	MAKER=ATMEL
+	CHIP=AT91M55800
+	<END>
+
+	<BEGIN> REMOTE
+	DEVICE=JtagArm7.DLL
+	COMMTYPE=PARALLEL
+	PARALLEL=LPT1
+	SPEED=0
+	<END>
+
+	<BEGIN> DEBUG
+	VERIFY=TRUE
+	AUTODOWNLOAD=FALSE
+	SYMBOL=.\debug\ucos_eb55.elf
+	DOWNLOAD=.\debug\ucos_eb55.elf
+	DOWNLOADADDR=0x02000000
+	MEMMAPFILE=
+	AUTOSCRIPT=TRUE
+	USEMEMMAP=FALSE
+	EXECFDOWN=TRUE
+	EXECFENTRY=FALSE
+	SCRIPT=.\at91\targets\boot_eb55.cs
+	LINK=.\debug\ucos_eb55.elf
+	<END>
+
+	<BEGIN> DIR
+	SOURCE=.\at91\;
+	SUBDIR=TRUE
+	<END>
+
+	<BEGIN> CPU
+	MODULE=arm7.DLL
+	FAMILY=ARM7
+	FAMILYID=1
+	MEMBER=ARM7
+	MEMBERID=1
+	ENDIAN=0
+	MAKER=ATMEL
+	CHIP=AT91M55800
+	<END>
+
+	<BEGIN> REMOTE
+	DEVICE=JtagArm7.DLL
+	COMMTYPE=PARALLEL
+	PARALLEL=LPT1
+	SPEED=0
+	<END>
+
+	<BEGIN> DEBUG
+	VERIFY=TRUE
+	AUTODOWNLOAD=FALSE
+	SYMBOL=.\debug\ucos_eb55.elf
+	DOWNLOAD=.\debug\ucos_eb55.elf
+	DOWNLOADADDR=0x02000000
+	MEMMAPFILE=
+	AUTOSCRIPT=TRUE
+	USEMEMMAP=FALSE
+	EXECFDOWN=TRUE
+	EXECFENTRY=FALSE
+	SCRIPT=.\at91\targets\boot_eb55.cs
+	LINK=.\debug\ucos_eb55.elf
+	<END>
+
+	<BEGIN> DIR
+	SOURCE=.\at91\;
+	SUBDIR=TRUE
+	<END>
+
+<END>
+
+<BEGIN> BUILD_CONFIG
+	CONFIG_DLL=GccArmSettingPage.dll
+	<BEGIN> COMPILE_COMMAND_LINE
+	-Os -w -mlittle-endian -mthumb-interwork -gdwarf -c -DAT91M55800=1 -DOUR_BOARD=1 -I..\include -I..\Os\OS_port
+	 $(SOURCE_FILE) -o.\debug\$(OBJ_FILE)
+	<END>
+	<BEGIN> ASSEMBLE_COMMAND_LINE
+	$(SOURCE_FILE) -EL -mthumb-interwork -gdwarf2 --defsym AT91M55800=1 --defsym AT91EB55=1 --defsym AT91_DEBUG_NONE=1
+	 --defsym OUR_BOARD=1 -I..\include -o.\debug\$(OBJ_FILE)
+	<END>
+	<BEGIN> LINK_COMMAND_LINE
+	arm-elf-ld -T..\link\flash.ld -EL -LC:\EmbestIDE\Build\xgcc-arm-elf\arm-elf\lib\arm-inter -LC:\EmbestIDE\Build\xgcc-arm-elf\lib\gcc-lib\arm-elf\3.0.2\arm-inter
+	 -o.\debug\BootLoader.elf $(<cstartup.o>OBJ_FILES) -lc -lgcc ..\Lib\lib_drv_32.lib ..\Lib\m55800_lib32.lib
+	<END>
+<END>
+
+<BEGIN> PROJECT_FILES
+
+	<BEGIN> GROUP="BootC"
+		<PROP> GROUP_FILTER="*.c;*.cpp;*.cc;*.cxx"
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\BootC\BootMain.c
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="BootAsm"
+		<PROP> GROUP_FILTER="*.s;*.asm"
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\BootAsm\AsmFun.s
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\BootAsm\cstartup.s
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="Include"
+		<PROP> GROUP_FILTER="*.h;*.inc"
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\include\At91M55800.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\include\At91M55800.inc
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Include\Boot.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\include\MyBoard.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\include\MyBoard.inc
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\include\UserType.h
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="IrqAsm"
+		<PROP> GROUP_FILTER="*.s"
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\IrqAsm\irq_end.s
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\IrqAsm\irq_spu.s
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\IrqAsm\terminal_irq.s
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="PeriphC"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\periph\aic\Aic.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\periph\apmc\Apmc.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\periph\flash\Flash.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\nandflash\Nandflash.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\periph\pio\Pio.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\watchdog\ReStart.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\periph\usart\Usart.c
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="Driver"
+		<PROP> GROUP_FILTER="*.c;*.h"
+
+	<END>
+
+	<BEGIN> SOURCE_FILE
+	SOURCE=.\Readme.txt
+	STATUS=CLOSE
+	<END>
+
+<END>

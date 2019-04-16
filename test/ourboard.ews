@@ -1,0 +1,20 @@
+# Embest IDE Workspace File, Format Version 1.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+<BEGIN> CORE_INFO_TYPE
+Workspace
+<END>
+
+<BEGIN> CORE_INFO_VERSION
+1.00
+<END>
+
+<BEGIN> PROJECT_LIST
+PROJECT=.\Project\BootLoader.pjf
+ACTIVE_PROJECT=.\Project\App.pjf
+PROJECT=.\Project\AppD.pjf
+<END>
+
+<BEGIN> BATCH_BUILD_LIST
+<END>
+

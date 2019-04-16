@@ -1,0 +1,422 @@
+# Embest IDE Project File, Format Version 1.00
+# WARNING: DO NOT EDIT OR DELETE THIS PROJECT FILE!
+
+<BEGIN> PROJECT_NAME
+App
+<END>
+
+<BEGIN> CONFIG
+
+	<BEGIN> CPU
+	MODULE=arm7.DLL
+	FAMILY=ARM7
+	FAMILYID=1
+	MEMBER=ARM7
+	MEMBERID=1
+	MAKER=ATMEL
+	CHIP=AT91M55800
+	ENDIAN=0
+	<END>
+
+	<BEGIN> DEBUG
+	LINK=
+	AUTODOWNLOAD=FALSE
+	AUTOSCRIPT=TRUE
+	VERIFY=TRUE
+	USEMEMMAP=FALSE
+	EXECFDOWN=TRUE
+	EXECFENTRY=FALSE
+	SYMBOL=.\debug\App.elf
+	SCRIPT=..\BootAsm\boot_eb55.cs
+	DOWNLOAD=.\debug\App.elf
+	DOWNLOADADDR=0x02000000
+	<END>
+
+	<BEGIN> REMOTE
+	DEVICE=PowerIceArm7.DLL
+	SPEED=0
+	COMMTYPE=PARALLEL
+	PARALLEL=LPT1
+	<END>
+
+	<BEGIN> DIR
+	SUBDIR=TRUE
+	<END>
+
+<END>
+
+<BEGIN> BUILD_CONFIG
+	CONFIG_DLL=GccArmSettingPage.dll
+	<BEGIN> COMPILE_COMMAND_LINE
+	-Wmissing-declarations -Wtrigraphs -Wcast-align -Wuninitialized -Wshadow -Winline -Wconversion -Wbad-function-cast
+	 -Wcast-qual -Wunused -mlittle-endian -mthumb-interwork -gdwarf -c -DAT91M55800=1 -DOUR_BOARD=1 -I..\Os\OS_core
+	 -I..\Os\OS_port -I..\Include $(SOURCE_FILE) -o.\debug\$(OBJ_FILE)
+	<END>
+	<BEGIN> ASSEMBLE_COMMAND_LINE
+	-mthumb-interwork -EL -gdwarf2 --defsym AT91M55800=1 --defsym OS_START=1 --defsym AT91_DEBUG_ICE=1 --defsym
+	 OUR_BOARD=1 -I..\include $(SOURCE_FILE) -o.\debug\$(OBJ_FILE)
+	<END>
+	<BEGIN> LINK_COMMAND_LINE
+	arm-elf-ld -T..\link\sram_ice_app.ld -EL -LC:\EmbestIDE\Build\xgcc-arm-elf\arm-elf\lib\arm-inter -LC:\EmbestIDE\Build\xgcc-arm-elf\lib\gcc-lib\arm-elf\3.0.2\arm-inter
+	 -o.\debug\App.elf $(<cstartup.o>OBJ_FILES) -lc -lgcc ..\Lib\lib_drv_32.lib ..\Lib\m55800_lib32.lib
+	<END>
+<END>
+
+<BEGIN> PROJECT_FILES
+
+	<BEGIN> GROUP="os_core"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\includes.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\os_cfg.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Os_core.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\os_cpu.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\os_dbg_r.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\os_flag.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Os_mbox.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Os_mem.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\os_mutex.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Os_q.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Os_sem.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Os_task.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Os_time.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\Ucos_ii.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_core\ucos_ii.h
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="App"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\AC\ACTask.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\AppMain.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\AppMain.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\CH\CH.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\CH\CHTask.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\OH\CMCC_1.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\OH\CMCC_1.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\OH\CMCC_1_Init.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\KeyScan\KEYTask.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\SignalLamp\LampTask.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Log\Log.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\MM\MemMgmt.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\MM\MemMgmt.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\OH\OH.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\OH\OHTask.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Timer\TCTask.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Timer\Timer.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Timer\timer.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\UI\UITask.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\OH\YKPP.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\OH\YKPP.h
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="Include"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\include\Interface.h
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Include\UserType.h
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="os_port"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_port\Os_cpu_a.s
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\OS\OS_port\Os_cpu_c.c
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="BootAsm"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\BootAsm\cstartup.s
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="Periph"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\aic\Aic.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\apmc\Apmc.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\flash\Flash.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\nandflash\Nandflash.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\pio\Pio.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\watchdog\ReStart.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\rtc\Rtc.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\tc\Tc.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\Periph\usart\Usart.c
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="Util"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Util\Util.cpp
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Util\Util.h
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="IrqAsm"
+		<PROP> GROUP_FILTER="*.s;*.a"
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\IrqAsm\irq_end.s
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\IrqAsm\irq_spu.s
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\IrqAsm\terminal_irq.s
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+	<BEGIN> GROUP="Driver"
+		<PROP> GROUP_FILTER=""
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Driver\adc\ad.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Driver\dac\dac.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Driver\getalarm\getalarm.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Driver\i2c\i2c.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Driver\key\key.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Driver\setatt\setatt.c
+		STATUS=CLOSE
+		<END>
+
+		<BEGIN> SOURCE_FILE
+		SOURCE=..\AppC\Driver\setfreq\setfreq.c
+		STATUS=CLOSE
+		<END>
+
+	<END>
+
+<END>

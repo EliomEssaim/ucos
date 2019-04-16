@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AppC\AC\ACTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\AC\gen_actask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\AC\poi_actask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\CH\CHTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\adc\ad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\adc\gen_conversion.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\adc\poi_conversion.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\dac\dac.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\getalarm\gen_switch.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\getalarm\getalarm.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\getalarm\poi_switch.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\i2c\i2c.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\KEY\key.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\setatt\setatt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Driver\setfreq\setfreq.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\KEYSCAN\KEYTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Log\log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\MM\MemMgmt.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\OH\CMCC_1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\OH\CMCC_1_Init.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\OH\CMCC_DevConfig.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\OH\OHTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\OH\YKPP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\SignalLamp\gen_lamptask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\SignalLamp\LampTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\SignalLamp\Poi_LampTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Timer\TCTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Timer\timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\UI\UITask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\Util\Util.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppC\AppMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BootC\BootMain.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\Os_core.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\os_dbg_r.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\os_flag.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\Os_mbox.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\Os_mem.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\os_mutex.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\Os_q.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\Os_sem.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\os_task.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\Os_time.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_core\Ucos_ii.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OS\OS_port\os_cpu_c.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\aic\Aic.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\apmc\Apmc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\flash\flash.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\nandflash\Nandflash.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\pio\Pio.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\rtc\rtc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\tc\Tc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\usart\Usart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Periph\watchdog\ReStart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppC\AC\Actask.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\CH\CH.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Driver\adc\ad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Driver\adc\ad_55800.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Driver\adc\comdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Driver\dac\dac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Driver\getalarm\getalarm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Driver\i2c\i2c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Driver\KEY\key.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\include\Interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\include\MyCfg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Log\Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\MM\MemMgmt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\OH\CMCC_1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\OH\CMCC_1_Ext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\OH\OH.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\OH\YKPP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\SignalLamp\Lamp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Timer\timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\Util\Util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppC\AppMain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\At91M55800.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Boot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\MyBoard.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\UserType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OS\OS_core\includes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OS\OS_core\os_cfg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OS\OS_core\os_cpu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OS\OS_core\ucos_ii.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\aic\Aic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\apmc\Apmc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\flash\Flash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\nandflash\NandFlash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\pio\Pio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\rtc\Rtc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\tc\Tc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Periph\usart\Usart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Include\At91M55800.inc">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="Include\MyBoard.inc">
+      <Filter>头文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+1.仿真器调试BootLoader：
+Project->Settings->Assembler中的Predefines的AT91_DEBUG_NONE=1改为AT91_DEBUG_ICE=1
+
+Project->Settings->Linker中的Linker script file设为..\link\sram_ice.ld编译后通过仿真器下载至RAM进行调试
+
+2.下载BootLoader到Flash：
+Project->Settings->Assembler中的Predefines的AT91_DEBUG_ICE=1改为AT91_DEBUG_NONE=1
+
+Project->Settings->Linker中的Linker script file设为..\link\flash.ld
+
+编译后通过elf2bin工具手动把ourboard.elf转换为BootLoader.bin（通过命令提示符敲入elf2bin  ourboard.elf  BootLoader.bin）
+
+把BootLoader.bin通过英蓓特的FlashProgrammer工具下载至目标板

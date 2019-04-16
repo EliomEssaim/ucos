@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BCC71072-AEF4-481E-9CB9-C2A7D3CBE136}</ProjectGuid>
+    <RootNamespace>test</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\ucos\Test\test\test\Periph\usart;F:\ucos\Test\test\test\OS\OS_core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\ucos\Test\test\test\Periph\usart;F:\ucos\Test\test\test\OS\OS_core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AppC\AC\ACTask.cpp" />
+    <ClCompile Include="AppC\AC\gen_actask.cpp" />
+    <ClCompile Include="AppC\AC\poi_actask.cpp" />
+    <ClCompile Include="AppC\AppMain.cpp" />
+    <ClCompile Include="AppC\CH\CHTask.cpp" />
+    <ClCompile Include="AppC\Driver\adc\ad.c" />
+    <ClCompile Include="AppC\Driver\adc\gen_conversion.c" />
+    <ClCompile Include="AppC\Driver\adc\poi_conversion.c" />
+    <ClCompile Include="AppC\Driver\dac\dac.c" />
+    <ClCompile Include="AppC\Driver\getalarm\gen_switch.c" />
+    <ClCompile Include="AppC\Driver\getalarm\getalarm.c" />
+    <ClCompile Include="AppC\Driver\getalarm\poi_switch.c" />
+    <ClCompile Include="AppC\Driver\i2c\i2c.c" />
+    <ClCompile Include="AppC\Driver\KEY\key.c" />
+    <ClCompile Include="AppC\Driver\setatt\setatt.c" />
+    <ClCompile Include="AppC\Driver\setfreq\setfreq.c" />
+    <ClCompile Include="AppC\KEYSCAN\KEYTask.cpp" />
+    <ClCompile Include="AppC\Log\log.cpp" />
+    <ClCompile Include="AppC\MM\MemMgmt.cpp" />
+    <ClCompile Include="AppC\OH\CMCC_1.cpp" />
+    <ClCompile Include="AppC\OH\CMCC_1_Init.cpp" />
+    <ClCompile Include="AppC\OH\CMCC_DevConfig.cpp" />
+    <ClCompile Include="AppC\OH\OHTask.cpp" />
+    <ClCompile Include="AppC\OH\YKPP.cpp" />
+    <ClCompile Include="AppC\SignalLamp\gen_lamptask.cpp" />
+    <ClCompile Include="AppC\SignalLamp\LampTask.cpp" />
+    <ClCompile Include="AppC\SignalLamp\Poi_LampTask.cpp" />
+    <ClCompile Include="AppC\Timer\TCTask.cpp" />
+    <ClCompile Include="AppC\Timer\timer.cpp" />
+    <ClCompile Include="AppC\UI\UITask.cpp" />
+    <ClCompile Include="AppC\Util\Util.cpp" />
+    <ClCompile Include="BootC\BootMain.c" />
+    <ClCompile Include="OS\OS_core\Os_core.c" />
+    <ClCompile Include="OS\OS_core\os_dbg_r.c" />
+    <ClCompile Include="OS\OS_core\os_flag.c" />
+    <ClCompile Include="OS\OS_core\Os_mbox.c" />
+    <ClCompile Include="OS\OS_core\Os_mem.c" />
+    <ClCompile Include="OS\OS_core\os_mutex.c" />
+    <ClCompile Include="OS\OS_core\Os_q.c" />
+    <ClCompile Include="OS\OS_core\Os_sem.c" />
+    <ClCompile Include="OS\OS_core\os_task.c" />
+    <ClCompile Include="OS\OS_core\Os_time.c" />
+    <ClCompile Include="OS\OS_core\Ucos_ii.c" />
+    <ClCompile Include="OS\OS_port\os_cpu_c.c" />
+    <ClCompile Include="Periph\aic\Aic.c" />
+    <ClCompile Include="Periph\apmc\Apmc.c" />
+    <ClCompile Include="Periph\flash\flash.c" />
+    <ClCompile Include="Periph\nandflash\Nandflash.c" />
+    <ClCompile Include="Periph\pio\Pio.c" />
+    <ClCompile Include="Periph\rtc\rtc.c" />
+    <ClCompile Include="Periph\tc\Tc.c" />
+    <ClCompile Include="Periph\usart\Usart.c" />
+    <ClCompile Include="Periph\watchdog\ReStart.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppC\AC\Actask.h" />
+    <ClInclude Include="AppC\AppMain.h" />
+    <ClInclude Include="AppC\CH\CH.h" />
+    <ClInclude Include="AppC\Driver\adc\ad.h" />
+    <ClInclude Include="AppC\Driver\adc\ad_55800.h" />
+    <ClInclude Include="AppC\Driver\adc\comdef.h" />
+    <ClInclude Include="AppC\Driver\dac\dac.h" />
+    <ClInclude Include="AppC\Driver\getalarm\getalarm.h" />
+    <ClInclude Include="AppC\Driver\i2c\i2c.h" />
+    <ClInclude Include="AppC\Driver\KEY\key.h" />
+    <ClInclude Include="AppC\include\Interface.h" />
+    <ClInclude Include="AppC\include\MyCfg.h" />
+    <ClInclude Include="AppC\Log\Log.h" />
+    <ClInclude Include="AppC\MM\MemMgmt.h" />
+    <ClInclude Include="AppC\OH\CMCC_1.h" />
+    <ClInclude Include="AppC\OH\CMCC_1_Ext.h" />
+    <ClInclude Include="AppC\OH\OH.h" />
+    <ClInclude Include="AppC\OH\YKPP.h" />
+    <ClInclude Include="AppC\SignalLamp\Lamp.h" />
+    <ClInclude Include="AppC\Timer\timer.h" />
+    <ClInclude Include="AppC\Util\Util.h" />
+    <ClInclude Include="Include\At91M55800.h" />
+    <ClInclude Include="Include\Boot.h" />
+    <ClInclude Include="Include\MyBoard.h" />
+    <ClInclude Include="Include\UserType.h" />
+    <ClInclude Include="OS\OS_core\includes.h" />
+    <ClInclude Include="OS\OS_core\os_cfg.h" />
+    <ClInclude Include="OS\OS_core\os_cpu.h" />
+    <ClInclude Include="OS\OS_core\ucos_ii.h" />
+    <ClInclude Include="Periph\aic\Aic.h" />
+    <ClInclude Include="Periph\apmc\Apmc.h" />
+    <ClInclude Include="Periph\flash\Flash.h" />
+    <ClInclude Include="Periph\nandflash\NandFlash.h" />
+    <ClInclude Include="Periph\pio\Pio.h" />
+    <ClInclude Include="Periph\rtc\Rtc.h" />
+    <ClInclude Include="Periph\tc\Tc.h" />
+    <ClInclude Include="Periph\usart\Usart.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Include\At91M55800.inc" />
+    <None Include="Include\MyBoard.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
