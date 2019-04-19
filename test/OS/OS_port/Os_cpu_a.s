@@ -138,10 +138,10 @@ OSCtxSw:#ÈÎÎñÇĞ»» schedu() ÓÃµÄ ÖĞ¶ÏÓĞ¹ØµÄµØ·½ÓĞËÄ¸ö ÏµÍ³¸Õ¿ªÊ¼ ÖĞ¶ÏÎŞ¹Ø ÖĞ¶ÏÏà¹
 OSIntCtxSw:#ÖĞ¶ÏÖĞÍË³öµÄÊ±µÄÇĞ»»
 
         #OSIntCtxSwFlag = True
-        ldr r0,=OSIntCtxSwFlag
+        ldr r0,=OSIntCtxSwFlag#È«¾Ö±äÁ¿ ÕâÀï½ö½öÖÃ1 ÖÃÒ»¸öflagÀ´¿ØÖÆ
         mov r1,#1
         str r1,[r0]
-        mov pc,lr
+        mov pc,lr#·µ»Ø
         
 
 #*********************************************************************************************************
@@ -169,14 +169,14 @@ OSIntCtxSw:#ÖĞ¶ÏÖĞÍË³öµÄÊ±µÄÇĞ»»
 OSTickISR:
 	    stmfd sp!,{r0-r12,lr}
 
-
+#ÕâÀïµÄlr ĞèÒªÔÙ±£´æµ½Õâ¸öÈÎÎñ¶ÑÕ»µÄÉÏ ÒòÎª¸÷¸öÈÎÎñ¹²ÓÃÒ»¸öÄ£Ê½ lr¼´Ê¹±£´æµ½Á¬½Ó¼Ä´æÆ÷£¨±£»¤Ä£Ê½µÄÏÖ³¡£© »ØÀ´µÄÊ±ºò»¹ÊÇĞèÒªÔÙ´ÎÈ·¶¨Î»ÖÃ ±£´æaÈÎÎñµÄÏÖ³¡
 #- Write in the IVR to support Protect Mode
 #- No effect in Normal Mode
 #- De-assert the NIRQ and clear the source in Protect Mode
         ldr     r14, =AIC_BASE
         str     r14, [r14, #AIC_IVR]
     
-# read the interrupt status reg to clear it
+# read the interrupt status reg to clear it 
         ldr     r12,=TC0_BASE       	/* load tc0  base address			*/
         ldr     r12,[r12, #0x020]   	/* read from status register offse  */
 
@@ -189,10 +189,10 @@ OSTickISR:
 #- Save scratch/used registers and LR in SYS Stack
 #        stmfd   sp!, { r0-r12,r14}
 	            	
-        ldr     r12, =OSIntEnter         
+        ldr     r12, =OSIntEnter         /*ÈÃÇ¶Ì×¼ÆÊıÆ÷¼ÓÒ»*/
         mov     r14,pc                   
         bx      r12			 			/* Branch to OsIntEnter */
-        ldr     r12, =OSTimeTick         
+        ldr     r12, =OSTimeTick         /*idleÒ»¶¨ÊÇ×îºóÒ»¸öÈÎÎñ*/
         mov     r14,pc                   
         bx      r12                     /* Branch to OsTimeTick */      
         ldr     r12, =OSIntExit          
@@ -223,32 +223,32 @@ OSTickISR:
 		ldmfd sp!,{r0-r12,lr}
         subs pc,lr,#4     
 
-_IntCtxSw:
+_IntCtxSw:#ÕæÕıµÄÇĞ»»³ÌĞò
         mov r1,#0
-        str r1,[r0]
+        str r1,[r0]#Çå³ıflag
 
-        ldmfd sp!,{r0-r12,lr}
-        stmfd sp!,{r0-r3}      
-        mov r1,sp                  //r1=sp
+        ldmfd sp!,{r0-r12,lr}#¶ÑÕ»ÔÚÄÚºËÍâ ÄÚºËÖ»ÓĞ¶ÑÕ»Ö¸Õë ÕâÀï»Ø¸´¾ÉÈÎÎñµÄÏÖ³¡ 
+        stmfd sp!,{r0-r3}   #ºóÃæ»áÓÃµ½ËùÒÔÏÈÑ¹ÁË   
+        mov r1,sp                  //r1=sp   ÖĞ¶ÏÄ£Ê½µÄsp ¸³¸ør1
         add sp,sp,#16            //sp+4
-        sub r2,lr,#4               //r2=old task pc
+        sub r2,lr,#4               //r2=old task pc ÕæÕıµÄlrµÄpc £¨ÓÉÓÚÁ÷Ë®Ïß½á¹¹ËùÒÔÊÇ4£©
 
-        mrs r3,spsr              //spsr=r0=old cpsr intclose   r3=old cpsr
+        mrs r3,spsr              //spsr=r0=old cpsr intclose   r3=old cpsr    ¹ØÖĞ¶Ï  spsrÊÇÉÏ¸öÈÎÎñµÄcpsrÒ²¾ÍÊÇaÈÎÎñµÄcpsr
         orr r0,r3,#NOINT
         msr spsr_c,r0
         
-        mrs     r0, CPSR       //ÇĞ»»µ½Ö÷³ÌĞòÄ£Ê½
+        mrs     r0, CPSR       //ÇĞ»»µ½Ö÷³ÌĞòÄ£Ê½    ÊÖ¶¯Òì³£»Ö¸´ Ö®Ç°ÓÃµÄsp ÊÇÖĞ¶ÏµÄsp
         orr     r0, r0, #ARM_MODE_SYS
         msr     CPSR_c, r0
         
         #ldr r0,=.+8
         #movs pc,r0
 
-        stmfd sp!,{r2}              @ push old task's pc//´ËÊ±µÄspÊÇÏµÍ³Ä£Ê½µÄsp
+        stmfd sp!,{r2}              @ push old task's pc//´ËÊ±µÄspÊÇÏµÍ³Ä£Ê½µÄsp                                             ÈÎÎñÇĞ»»×ÔÎÒ ½²½â
         stmfd sp!,{r4-r12,lr}       @ push old task's lr,r12-r4
         mov r4,r1                   @ Special optimised code below
         mov r5,r3
-        ldmfd r4!,{r0-r3}
+        ldmfd r4!,{r0-r3}#»Ö¸´Ô­À´ÈÎÎñµÄr0 - r3
         stmfd sp!,{r0-r3}           @ push old task's r3-r0
         stmfd sp!,{r5}              @ push old task's psr
         mrs r4,spsr
@@ -279,14 +279,15 @@ _IntCtxSw:
         msr SPSR_cxsf,r4
         ldmfd sp!,{r4}              @ pop new task's psr
         msr CPSR_cxsf,r4        
-               
-#- Mark the End of Interrupt on the AIC
+ 
+#- Mark the End of Interrupt on the AIC Çå³ı ÖĞ¶Ï interrupt controlner
         ldr     r12, =AIC_BASE
         str	r12, [r12, #AIC_EOICR]     
         
         
         ldmfd sp!,{r0-r12,lr,pc}    @ pop new task's r0-r12,lr & pc
 
+              ##########×Ü½á£º ÖĞ¶ÏÓëÖĞ¶ÏµÄÇĞ»»¹Ø¼ü¾ÍÔÚÓÚ ¾ÉÈÎÎñÏÖ³¡µÄÊÇ´ÓÄÄÀïÀ´µÄ
 #*********************************************************************************************************
 #                                   CRITICAL SECTION METHOD 3 FUNCTIONS
 #
